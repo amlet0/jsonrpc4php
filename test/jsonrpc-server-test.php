@@ -1,5 +1,5 @@
 <?php
-require_once 'jsonrpc-server.php';
+require_once '../src/jsonrpc-server.php';
 
 class Test1 {
 

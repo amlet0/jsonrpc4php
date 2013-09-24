@@ -1,10 +1,17 @@
 <?php
 
+/*
+ * Basic JSONRPC Implementation, transport protocol agnostic
+ */
 class JsonRpcServer {
 
+	// Supported jsonrpc protocol version
 	const JSONRPC_VERSION = '2.0';
 	
+	// set to true to enable logging via 'error_log'
 	public $log = false;
+	
+	// Namespace separator
 	public $namespaceSeparator = '.';
 
 	private $namespaces = array();
@@ -179,7 +186,7 @@ class HttpJsonRpcServer extends JsonRpcServer {
 		}
 	
 		$response = self::exec($request);
-		return $response;
+		echo $response;
 	}
 	
 }
