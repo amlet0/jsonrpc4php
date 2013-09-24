@@ -1,5 +1,4 @@
-jsonrpc4php
-===========
+# jsonrpc4php
 
 JSONRPC implementation in PHP, compliant with http://www.jsonrpc.org/specification
 
@@ -10,13 +9,16 @@ Features:
 
 JsonRpc client is missing (do you need it? help me!)
 
-USAGE
-- import jsonrpc-server.php in your project
-- define an object with rpc-exported methods
+# USAGE
+* steps:
+    + import jsonrpc-server.php in your project
+    + define an object with rpc-exported methods
 
 example:
 
---------------- rpc.php ----------------
+* * *
+*file: rpc.php*
+
 <?php 
  require_once 'jsonrpc-server.php';
 
@@ -41,7 +43,7 @@ example:
 $(function() {
 	// rpc call: calc.add(1, 2)
 	$.post(
-		'jsonrpc-httpserver-test.php',
+		'rpc.php',
 		JSON.stringify({ jsonrpc: '2.0', method: 'calc.add', params: [1, 2], id: "1" }),
 		null, 'json'
 	)
