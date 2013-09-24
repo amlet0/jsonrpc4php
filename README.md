@@ -19,43 +19,43 @@ example:
 * * *
 *file: rpc.php*
 
-<?php 
- require_once 'jsonrpc-server.php';
-
- class Calculator {
- 	public function add($a, $b) {
- 		return $a+$b;
- 	}
- }
+    <?php 
+    require_once 'jsonrpc-server.php';
+    
+    class Calculator {
+        public function add($a, $b) {
+        return $a+$b;
+        }
+    }
  
- $server = new HttpJsonRpcServer();
- $server->log = true;
- $server->register(new Calculator(), 'calc');
- $server->httpExec(); 
-?> 
+    $server = new HttpJsonRpcServer();
+    $server->register(new Calculator(), 'calc');
+    $server->httpExec(); 
+    ?> 
 
------------ index.html -----------------
-<html>
-
-<head>
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script>
-$(function() {
-	// rpc call: calc.add(1, 2)
-	$.post(
-		'rpc.php',
-		JSON.stringify({ jsonrpc: '2.0', method: 'calc.add', params: [1, 2], id: "1" }),
-		null, 'json'
-	)
-	.done(function(data) {
-		alert(data.result);
-	});
-});
-</script>
-</head>
-
-<body>
-</body>
-
-</html>
+* * *
+*file: index.html*
+    <html>
+    
+    <head>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+    $(function() {
+        // rpc call: calc.add(1, 2)
+        $.post(
+            'rpc.php',
+            JSON.stringify({ jsonrpc: '2.0', method: 'calc.add', params: [1, 2], id: "1" }),
+            null, 'json'
+        )
+        .done(function(data) {
+            alert(data.result);
+        });
+    });
+    </script>
+    </head>
+    
+    <body>
+    </body>
+    
+    </html>
 
