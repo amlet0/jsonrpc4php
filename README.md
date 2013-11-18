@@ -4,10 +4,9 @@ JSONRPC implementation in PHP, compliant with http://www.jsonrpc.org/specificati
 
 Features:
 - JsonRpc Server (transport protocol agnostic)
-- HTTP JsonRpc Server
+- JsonRpc Server (over http)
+- JsonRpc Client (over http)
 - support for single request, batch request, notifications
-
-JsonRpc client is missing (do you need it? help me!)
 
 # USAGE
 * steps:
