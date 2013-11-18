@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Basic JSONRPC Implementation, transport protocol agnostic
+ * Basic JSONRPC Server Implementation, transport protocol agnostic
  */
 class JsonRpcServer {
 
